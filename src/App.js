@@ -1,13 +1,20 @@
+import { useEffect } from 'react';
 import { Card, Input, Button } from './components'
+import { useWeather } from './context/Weather';
 import './App.css';
 
-
 function App() {
+  const weather = useWeather()
+  console.log(weather)
+  useEffect(() => {
+    weather.getCurrentLocationData()
+    weather.getData()
+  }, [])
   return (
     <div className="App">
       <Input />
       <Card />
-      <Button />
+      <Button onClick={weather.getData} value='Search' />
     </div>
   );
 }

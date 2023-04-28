@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useWeather } from "../context/Weather";
 
 const Card = () => {
+    const [isCelcious, setIsCelcious] = useState(true);
     const weather = useWeather();
+    const convertTemperature = () => {
+        setIsCelcious(prevTemperature => !prevTemperature)
+    }
     return (
         <div className="card">
-            <img src={weather?.data?.current?.condition?.icon} />
-            <h1>{weather.data?.current?.temp_c}°C</h1>
+            <img alt='#' src={weather?.data?.current?.condition?.icon} />
+            {isCelcious ?
+                (<h1>{weather.data?.current?.temp_c}°C</h1>)
+                :
+                (<h1>{weather.data?.current?.temp_f}°F</h1>)}
+            <button onClick={convertTemperature}>{isCelcious ? "Fahrenheit" : "Celcious"}</button>
             <h1>
                 {weather.data?.location?.name}, {weather.data?.location?.region}{" "}
                 {weather.data?.location?.country}
             </h1>
+            <p>{ }</p>
         </div>
     );
 };

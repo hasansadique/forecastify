@@ -8,7 +8,6 @@ function App() {
   console.log(weather)
   useEffect(() => {
     weather.getCurrentLocationData()
-    weather.getData()
   }, [])
   return (
     <div className="App">

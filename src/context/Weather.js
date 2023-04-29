@@ -10,8 +10,8 @@ const WeatherProvider = ({ children }) => {
     const [data, setData] = useState(null)
     const [searchCity, setSearchCity] = useState(null) //state for searching city
     const getData = async () => {
-        const datas = await getWeatherDataCity(searchCity)
-        setData(datas)
+        const cities = await getWeatherDataCity(searchCity)
+        setData(cities)
     }
     const getCurrentLocationData = () => {
         navigator.geolocation.getCurrentPosition((position) => {

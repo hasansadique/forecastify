@@ -19,7 +19,15 @@ const Card = () => {
                 {weather.data?.location?.name}, {weather.data?.location?.region}{" "}
                 {weather.data?.location?.country}
             </h1>
-            <p>{ }</p>
+            <p>{
+                weather.data?.forecast?.forecastday[0].hour.map((data, i) => {
+                    return (
+                        <>
+                            <p key={i}>{data.temp_c}</p>
+                        </>
+                    )
+                })
+            }</p>
         </div>
     );
 };

@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const Button = ({ value, onClick }) => {
+const Button = ({ value, getData }) => {
     return (
         <div>
-            <button onClick={onClick}>{value}</button>
+            <button onClick={getData}>{value}</button>
         </div>
     )
 }

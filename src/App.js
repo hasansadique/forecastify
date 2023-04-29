@@ -5,15 +5,14 @@ import './App.css';
 
 function App() {
   const weather = useWeather()
-  console.log(weather)
   useEffect(() => {
     weather.getCurrentLocationData()
   }, [])
   return (
     <div className="App">
       <Input />
+      <Button getData={weather.getData} value='Search' />
       <Card />
-      <Button onClick={weather.getData} value='Search' />
     </div>
   );
 }

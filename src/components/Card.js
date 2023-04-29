@@ -22,9 +22,9 @@ const Card = () => {
             <p>{
                 weather.data?.forecast?.forecastday[0].hour.map((data, i) => {
                     return (
-                        <>
-                            <p key={i}>{data.temp_c}</p>
-                        </>
+                        <div key={i}>
+                            <p >{data.temp_c}</p>
+                        </div>
                     )
                 })
             }</p>

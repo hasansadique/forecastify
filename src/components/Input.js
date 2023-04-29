@@ -3,12 +3,10 @@ import { useWeather } from '../context/Weather'
 
 const Input = () => {
     const weather = useWeather()
-
     return (
         <div>
             <input type='text' value={weather.searchCity} onChange={(e) => weather.setSearchCity(e.target.value)} />
         </div>
     )
 }
-
 export default Input

@@ -7,8 +7,8 @@ const useWeather = () => { //Custom Hook for passing data
 }
 
 const WeatherProvider = ({ children }) => {
-    const [data, setData] = useState(null)
-    const [searchCity, setSearchCity] = useState(null) //state for searching city
+    const [data, setData] = useState([])
+    const [searchCity, setSearchCity] = useState('') //state for searching city
     const getData = async () => {
         const cities = await getWeatherDataCity(searchCity)
         setData(cities)

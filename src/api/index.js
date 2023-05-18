@@ -4,9 +4,10 @@ export const getWeatherDataCity = async (city) => {
     const data = await response.json()
     console.log(data)
     return data
+
 }
 export const getWeatherDataLoaction = async (lat, lon) => {
-    const response = await fetch(`${URL}&q=${lat},${lon}`);
+    const response = await fetch(`${URL}&q=${lat},${lon}&days=5`);
     const data = await response.json()
     console.log(data)
     return data

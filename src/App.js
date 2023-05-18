@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Card, Input, Button } from './components'
+import { Card, Input } from './components'
 import { useWeather } from './context/Weather';
 import './App.css';
 
@@ -9,9 +9,9 @@ function App() {
     weather.getCurrentLocationData()
   }, [])
   return (
-    <div className="App">
+    <div data-testid='my-link'
+      className="App">
       <Input />
-      <Button getData={weather.getData} value='Search' />
       <Card />
     </div>
   );

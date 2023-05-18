@@ -10,6 +10,10 @@ const WeatherProvider = ({ children }) => {
     const [data, setData] = useState([])
     const [searchCity, setSearchCity] = useState('') //state for searching city
     const getData = async () => {
+        if (!searchCity) {
+            alert("Enter the City")
+            return
+        }
         const cities = await getWeatherDataCity(searchCity)
         setData(cities)
     }
@@ -33,6 +37,5 @@ const WeatherProvider = ({ children }) => {
             {children}
         </WeatherContext.Provider>
     )
-
 }
 export { useWeather, WeatherProvider }
